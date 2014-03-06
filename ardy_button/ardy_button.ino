@@ -33,6 +33,7 @@ const int ledPin =  9;      // the number of the LED pin
 int buttonState = 0;         // variable for reading the pushbutton status
 
 void setup() {
+  Serial.begin(9600);
   // initialize the LED pin as an output:
   pinMode(ledPin, OUTPUT);      
   // initialize the pushbutton pin as an input:
@@ -48,9 +49,12 @@ void loop(){
   if (buttonState == HIGH) {     
     // turn LED on:    
     digitalWrite(ledPin, HIGH);  
+    Serial.println ("on");
   } 
   else {
     // turn LED off:
-    digitalWrite(ledPin, LOW); 
+    digitalWrite(ledPin, LOW);
+    Serial.println ("off");
   }
+  delay(1000);
 }
